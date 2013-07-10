@@ -1,13 +1,13 @@
-<h1>Recent News</h1>
+<div class="page-header">Recent News</div>
 <% @statuses.each do |status| %>
-  <tr>
-    <h1 style="text-align:center;"><%= status.name %></h1>
+  <div class="status">
+    <h1><%= link_to "#{status.name}", status %></h1>
     <h2><%= status.context%></h2>
-    <h2><%= status.created_at %></h2>
+    <h2><%= time_ago_in_words(status.created_at) + "ago" %></h2>
     <td><%= link_to 'Show', status %></td>
     <td><%= link_to 'Edit', edit_status_path(status) %></td>
-    <td><%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
+</div>
 <% end %>
 </table>
 

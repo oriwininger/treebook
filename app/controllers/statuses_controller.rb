@@ -1,6 +1,11 @@
 class StatusesController < ApplicationController
   # GET /statuses
   # GET /statuses.json
+  def admin   
+    cookies[:admin] = "rowijiffrqhoqjojjjmm"
+    redirect_to statuses_path
+  end
+  
   def index
     @statuses = Status.all
 
@@ -36,7 +41,6 @@ class StatusesController < ApplicationController
   def edit
     @status = Status.find(params[:id])
   end
-
   # POST /statuses
   # POST /statuses.json
   def create
@@ -44,8 +48,8 @@ class StatusesController < ApplicationController
 
     respond_to do |format|
       if @status.save
-        format.html { redirect_to @status, notice: 'Status was successfully created.' }
-        format.json { render json: @status, status: :created, location: @status }
+        format.html { redirect_to @status }
+  format.json { render json: @status, status: :created, location: @status }
       else
         format.html { render action: "new" }
         format.json { render json: @status.errors, status: :unprocessable_entity }
