@@ -7,6 +7,8 @@ gem 'pry'
 gem 'sqlite3'
 gem 'sequel'
 gem 'devise'
+gem 'pry-remote'
+gem 'pry-nav'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -29,6 +29,7 @@ class StatusesController < ApplicationController
   # GET /statuses/new
   # GET /statuses/new.json
   def new
+#    binding.pry
     @status = Status.new
 
     respond_to do |format|

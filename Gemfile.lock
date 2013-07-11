@@ -66,6 +66,11 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
+    pry-nav (0.2.3)
+      pry (~> 0.9.10)
+    pry-remote (0.1.7)
+      pry (~> 0.9)
+      slop (~> 3.0)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -124,6 +129,8 @@ DEPENDENCIES
   devise
   jquery-rails
   pry
+  pry-nav
+  pry-remote
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
   sequel

@@ -1,7 +1,7 @@
 <div class="page-header">Recent News</div>
 <% @statuses.each do |status| %>
   <div class="status">
-    <h1><%= link_to "#{status.name}", status %></h1>
+  	<h2><%= Status.user.first_name %></h2>
     <h2><%= status.context%></h2>
     <h2><%= time_ago_in_words(status.created_at) + "ago" %></h2>
     <td><%= link_to 'Show', status %></td>

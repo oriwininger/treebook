@@ -1,23 +1,23 @@
 Treebok::Application.routes.draw do
   devise_for :users
-
+  
   resources :statuses
   root :to => 'statuses#index'
   match '/admin/make/path/btbhefiuvwhrgu3hwiqjwijadmin' => 'statuses#admin'
-  match '/user' => 'users#index'  
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
+ # match '/statuses/new' => 'status#edit'
+ # match '/users' => 'users#index'  
+ # match '/statuses/new' => 'devise#pos'
+ # The priority is based upon order of creation:
+ # first created -> highest priority.
   # Sample of regular route: 
-  #match '/:id' => 'statuses#show'
+  # match '/:id' => 'statuses#show'
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+  #  match '/statuses/new' => 'statuses#new', :as => :post
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
   # Sample resource route with options:
   #   resources :products do
   #     member do
