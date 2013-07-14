@@ -3,13 +3,15 @@
   	<h3 class="text-center">no Recent news to show </h3> 
   <% end %>
 <% @statuses.each do |status| %>
-  <div class="status">
+<div class="span1"><%= image_tag status.user.gravatar_url, :class => 'gravatar' %></div>
+<div class="span7">
+    <div class="status">
     <h2><%= status.context %></h2>
     <h1><%= status.user_name %></h1>
     <td><%= link_to 'Show ', status %></td> |
     <td><%= link_to ' Edit', edit_status_path(status) %></td>
    <div class="page-header"> 
-   	  <h5><%= time_ago_in_words(status.created_at) + " ago" %></h5>
+      <h5><%= time_ago_in_words(status.created_at) + " ago" %></h5>
   </div>
   </tr>
 </div>
@@ -17,3 +19,5 @@
 </table>
 
 <br />
+
+</div>

@@ -7,6 +7,11 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
+ .gravatar {
+  border-radius: 5px;
+ }
+
+
  .status {
   &:hover {
     background-color: black;
