@@ -5,4 +5,7 @@ class Status < ActiveRecord::Base
   # attr_accessor :context
 
   belongs_to :user
+
+  validates, :context, presence: true
+  							length: { minimum: 2 } 
 end
