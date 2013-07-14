@@ -2,7 +2,7 @@ Treebook::Application.routes.draw do
   root :to => 'statuses#index' 
   resources :statuses
   devise_for :users
-
+  
   match '/new' => 'statuses#new'
   match '/admins/dashboards/bo' => 'statuses#bo'
   #match '/statuses/new' => 'statuses#new'
