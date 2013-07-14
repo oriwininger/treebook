@@ -34,7 +34,7 @@
                     <!-- dropdown menu links -->
                     <% if current_user.user_type == "admin" %>
                       <li class="divider"></li>
-                      <li class="disabled"><a href="http://localhost:3000/admins/dashboards/bo">dashboard</a></li>
+                      <li><a href="http://localhost:3000/admins/dashboards/bo">dashboard</a></li>
                      <% end %>
                     <% if @action == "show" and @status.user_id == current_user.id %>
                       <li><a href="<%= request.url + "/edit"%>">Edit</a></li>
@@ -55,8 +55,12 @@
           </div>
             </div>
             	<div class="container">
-			 <p class="notice"><%= notice %></p>
-       <p class="flash"><%= alert %></p>
+                <% flash.each do |type, message| %>
+                  <div class="alert <%= flash_class type %>">
+                   <button class="close" data-dismiss="alert">x</button>
+                    <%= message %>
+                  </div>
+                <% end %>
       <%= yield %>
 			</div>
             </body>     

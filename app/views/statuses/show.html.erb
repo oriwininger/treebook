@@ -1,11 +1,13 @@
 <p>
-  <a><%= @status.user_id %></a>
-</p>
+  <p><%= @status.context %></p>
+</p></br>
 
 <p>
-  <b>Context:</b>
-  <%= @status.context %>
+  <b>By :</b>
+  <%= @status.user_name %>
 </p>
+
+<b><%= time_ago_in_words(@status.created_at) %></b></br></br>
 
 
 <%= link_to 'Edit', edit_status_path(@status) %> |

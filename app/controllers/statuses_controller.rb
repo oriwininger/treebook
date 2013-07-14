@@ -2,6 +2,9 @@ class StatusesController < ApplicationController
   # GET /statuses
   # GET /statuses.json 
   def bo   
+    @statuses = Status.all
+    @users = User.all
+
     if current_user.user_type == nil
       redirect_to statuses_path
     end
