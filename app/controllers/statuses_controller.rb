@@ -1,6 +1,18 @@
 class StatusesController < ApplicationController
   # GET /statuses
   # GET /statuses.json 
+  before_filter :first_status
+
+  def first_status
+    if current_user.statuses == nil
+      @status = Status.new
+      @status.user_id = current_user.id
+      @status.user_name = current_user.profile_name
+      @status.context = "Hi , chack out my new profile on TreeBook"
+      @status.save!
+      end  
+  end
+
   def bo   
     @statuses = Status.all
     @users = User.all

@@ -5,6 +5,7 @@ Treebook::Application.routes.draw do
   resources :statuses
   devise_for :users
   
+  match ':id' => 'profiles#show'
   match '/new' => 'statuses#new'
   match '/admins/dashboards/bo' => 'statuses#bo'
   #match '/statuses/new' => 'statuses#new'
