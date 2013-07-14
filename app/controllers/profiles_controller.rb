@@ -1,7 +1,9 @@
 class ProfilesController < ApplicationController
   def show
   @user = User.find_by_profile_name(params[:id])
-  	@statuses = @user.statuses.all
+  	if @user.statuses != nil
+  		@statuses = @user.statuses.all
+  	end	
 
   #	if @user
   #		render action: :show
