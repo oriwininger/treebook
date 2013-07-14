@@ -4,11 +4,14 @@ gem 'rails', '3.2.13'
 gem 'pry'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'sqlite3'
 gem 'sequel'
 gem 'redis'
 gem 'simple_form'
 gem 'binding_of_caller'
+
+group :development, :test do
+	gem 'sqlite3'
+end	
 
 gem 'devise'
 gem 'pry-remote'
