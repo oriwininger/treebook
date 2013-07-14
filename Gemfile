@@ -13,6 +13,10 @@ group :development, :test do
 	gem 'sqlite3'
 end	
 
+group :production do 
+	gem 'pg'
+end
+
 gem 'devise'
 gem 'pry-remote'
 gem 'pry-nav'
