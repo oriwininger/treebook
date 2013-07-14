@@ -1,0 +1,6 @@
+<h1><%= @user.profile_name %></h1> 
+<% @statuses.each do |status| %>
+<p class="form signin">
+	<div class="lead"><%= status.context %></div>
+</p>
+<% end %>
