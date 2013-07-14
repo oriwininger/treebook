@@ -1,9 +1,10 @@
 class StatusesController < ApplicationController
   # GET /statuses
-  # GET /statuses.json
-  def admin   
-    cookies[:admin] = "rowijiffrqhoqjojjjmm"
-    redirect_to statuses_path
+  # GET /statuses.json 
+  def bo   
+    if current_user.user_type == nil
+      redirect_to statuses_path
+    end
   end
   
   def index

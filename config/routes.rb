@@ -4,7 +4,7 @@ Treebook::Application.routes.draw do
   devise_for :users
 
   match '/new' => 'statuses#new'
-  match '/admin/make/path/btbhefiuvwhrgu3hwiqjwijadmin' => 'statuses#admin'
+  match '/admins/dashboards/bo' => 'statuses#bo'
   #match '/statuses/new' => 'statuses#new'
  # match '/users' => 'users#index'  
  # match '/statuses/new' => 'devise#pos'

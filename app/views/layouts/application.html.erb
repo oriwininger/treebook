@@ -32,9 +32,9 @@
                   </a>
                   <ul class="dropdown-menu">
                     <!-- dropdown menu links -->
-                    <% if current_user.profile_name == "oriwin" %>
+                    <% if current_user.user_type == "admin" %>
                       <li class="divider"></li>
-                      <li class="disabled"><a href="#"><%= $redis.get "entrances_counter" %> entrances.</a></li>
+                      <li class="disabled"><a href="http://localhost:3000/admins/dashboards/bo">dashboard</a></li>
                      <% end %>
                     <% if @action == "show" and @status.user_id == current_user.id %>
                       <li><a href="<%= request.url + "/edit"%>">Edit</a></li>
