@@ -1,10 +1,11 @@
-Treebok::Application.routes.draw do
-  devise_for :users
-  
+Treebook::Application.routes.draw do
+  root :to => 'statuses#index' 
   resources :statuses
-  root :to => 'statuses#index'
+  devise_for :users
+
+  match '/new' => 'statuses#new'
   match '/admin/make/path/btbhefiuvwhrgu3hwiqjwijadmin' => 'statuses#admin'
- # match '/statuses/new' => 'status#edit'
+  #match '/statuses/new' => 'statuses#new'
  # match '/users' => 'users#index'  
  # match '/statuses/new' => 'devise#pos'
  # The priority is based upon order of creation:

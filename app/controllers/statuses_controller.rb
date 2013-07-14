@@ -13,13 +13,13 @@ class StatusesController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @statuses }
     end
-  end
+  end  
 
   # GET /statuses/1
   # GET /statuses/1.json
   def show
     @status = Status.find(params[:id])
-
+    @action = "show"
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @status }
@@ -29,12 +29,12 @@ class StatusesController < ApplicationController
   # GET /statuses/new
   # GET /statuses/new.json
   def new
-#    binding.pry
     @status = Status.new
-
+    # $redis.
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @status }
+#      binding.pry
     end
   end
 
@@ -46,6 +46,9 @@ class StatusesController < ApplicationController
   # POST /statuses.json
   def create
     @status = Status.new(params[:status])
+#    binding.pry
+    @status.user_id = current_user.id
+    @status.user_name = current_user.profile_name
 
     respond_to do |format|
       if @status.save

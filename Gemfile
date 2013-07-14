@@ -6,9 +6,14 @@ gem 'pry'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'sqlite3'
 gem 'sequel'
+gem 'redis'
+gem 'simple_form'
+gem 'binding_of_caller'
+
 gem 'devise'
 gem 'pry-remote'
 gem 'pry-nav'
+gem 'better_errors'
 
 # Gems used only for assets and not required
 # in production environments by default.

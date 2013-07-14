@@ -15,28 +15,42 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="localhost:3000">oriwininger</a>
+          <% if user_signed_in? %>
+          <a class="brand" href="http://localhost:3000/"><%= current_user.profile_name %></a>
+          <% else %>
+          <a class="brand">Treebook</a>
+          <% end %>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
-              <li><a href="localhost:3000/#about">About</a></li>
-              <li><a href="/users/sign_out">sign-out</a></li>
-            	<li><a><%= link_to '', new_status_path %></a></li>
-            	<div class="btn-group">
-  <%if @user == "admin" and @current_url.include?("/statuses/") %>
-  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-  <ul class="dropdown-menu">
-    <li><a href="#"><i class="icon-pencil"></i> Edit<%= link_to '', edit_status_path %></a></li>
-    <li><a href="#"><i class="icon-trash"></i> Delete<%= link_to '', @status, method: :delete, data: { confirm: 'Are you sure?' } %></a></li>
-    <li><a href="#"><i class="icon-ban-circle"></i> Suspend</a></li>
-
-    <li class="divider"></li>
-    <li><a>new status<%= link_to '', new_status_path %></a></li>
-  </ul>
-</div>
-   <% end %>
-   </ul>
-       </div><!--/.nav-collapse -->
+              <li><a href="localhost:3000/#about">About</a></li>  
+              <% if user_signed_in? %>
+              <div class="btn-group">
+                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                <%= current_user.profile_name %>
+                <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <!-- dropdown menu links -->
+                    <% if current_user.profile_name == "oriwin" %>
+                      <li class="divider"></li>
+                      <li class="disabled"><a href="#"><%= $redis.get "entrances_counter" %> entrances.</a></li>
+                     <% end %>
+                    <% if @action == "show" and @status.user_id == current_user.id %>
+                      <li><a href="<%= request.url + "/edit"%>">Edit</a></li>
+                      <li><a href="<%= request.url + "/edit"%>">Delete</a></li>
+                      <% else %>
+                      <li class="divider"></li>
+                      <li class="disabled"><a href="#">Edit</a></li>
+                      <li class="disabled"><a href="#">Delete</a></li>
+                    <% end %>
+                    <li class="divider"></li>
+                    <li><%= link_to("Logout", destroy_user_session_path, :method => :delete) %></li>
+                     <li><a href="http://localhost:3000/new">new post</a></li>  
+                  </ul>
+                  </div>
+              <% end %>
+        </div><!--/.nav-collapse -->
          </div>
           </div>
             </div>
@@ -45,5 +59,5 @@
        <p class="flash"><%= alert %></p>
       <%= yield %>
 			</div>
-            </body>    
+            </body>     
 </html>

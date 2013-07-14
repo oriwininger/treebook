@@ -1,16 +1,19 @@
 <div class="page-header">Recent News</div>
+ <% if @statuses.count == 0 %>
+  	<h3 class="text-center">no Recent news to show </h3> 
+  <% end %>
 <% @statuses.each do |status| %>
   <div class="status">
-  	<h2><%= Status.user.first_name %></h2>
-    <h2><%= status.context%></h2>
-    <h2><%= time_ago_in_words(status.created_at) + "ago" %></h2>
-    <td><%= link_to 'Show', status %></td>
-    <td><%= link_to 'Edit', edit_status_path(status) %></td>
+    <h2><%= status.context %></h2>
+    <h1><%= status.user_name %></h1>
+    <td><%= link_to 'Show ', status %></td> |
+    <td><%= link_to ' Edit', edit_status_path(status) %></td>
+   <div class="page-header"> 
+   	  <h5><%= time_ago_in_words(status.created_at) + " ago" %></h5>
+  </div>
   </tr>
 </div>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Status', new_status_path %>

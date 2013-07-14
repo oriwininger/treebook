@@ -12,9 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= f.label "post by :" %><br/>
+      <input type="text-field" value="<%= current_user.profile_name %>" disabled>
   </div>
   <div class="field">
-    <%= f.label :context %><br />
+    <%= f.label "context :" %><br />
     <%= f.text_area :context %>
   </div>
   <div class="actions">

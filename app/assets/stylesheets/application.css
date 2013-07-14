@@ -11,6 +11,11 @@
  *= require_self
  *= require_tree .
  */
+ .status {
+ 	&:hover {
+ 		background-color: #D5D4D2;
+ 	}
+ }
 
  .span12 {
  	

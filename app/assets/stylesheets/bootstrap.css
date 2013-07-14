@@ -1,6 +1,5 @@
-
 /*!
- * Bootstrap v2.3.1
+ * Bootstrap v2.3.2
  *
  * Copyright 2012 Twitter, Inc
  * Licensed under the Apache License v2.0
@@ -9,11 +8,9 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
  .status {
-  border-bottom: 1px #ccc;
- }
- 
- .user-not-loged-in {
-  color: white;
+  &:hover {
+    background-color: black;
+  }
  }
 
 .clearfix {
@@ -227,17 +224,6 @@ textarea {
   h3 {
     page-break-after: avoid;
   }
-}
-.form-title {
-  color:#555;
-  font-size: 24px;
- font-family: Lato;
- padding-bottom: 40px;
-}
-
-.admin-login-form {
-  padding-top: 56px;
-  text-align: center;
 }
 
 body {
@@ -759,7 +745,7 @@ h4,
 h5,
 h6 {
   margin: 10px 0;
-  font-family: Lato;
+  font-family: inherit;
   font-weight: bold;
   line-height: 20px;
   color: inherit;
@@ -2320,13 +2306,13 @@ table th[class*="span"],
 .dropdown-menu > li > a:focus > [class^="icon-"],
 .dropdown-menu > li > a:hover > [class*=" icon-"],
 .dropdown-menu > li > a:focus > [class*=" icon-"],
-.dropdown-menu > .active > a:hover > [class^="icon-"],
-.dropdown-menu > .active > a:hover > [class*=" icon-"],
-.dropdown-submenu:hover > a:hover > [class^="icon-"],
-.dropdown-submenu:focus > a:hover > [class^="icon-"],
-.dropdown-submenu:hover > a:hover > [class*=" icon-"],
-.dropdown-submenu:focus > a:hover > [class*=" icon-"] {
-  background-image: url("images/glyphicons-halflings-white.png");
+.dropdown-menu > .active > a > [class^="icon-"],
+.dropdown-menu > .active > a > [class*=" icon-"],
+.dropdown-submenu:hover > a > [class^="icon-"],
+.dropdown-submenu:focus > a > [class^="icon-"],
+.dropdown-submenu:hover > a > [class*=" icon-"],
+.dropdown-submenu:focus > a > [class*=" icon-"] {
+  background-image: url("../img/glyphicons-halflings-white.png");
 }
 
 .icon-glass {
@@ -2343,9 +2329,7 @@ table th[class*="span"],
 
 .icon-envelope {
   background-position: -72px 0;
-  float: right;
 }
-
 
 .icon-heart {
   background-position: -96px 0;
@@ -3031,6 +3015,15 @@ table th[class*="span"],
   display: block;
 }
 
+.dropdown-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 990;
+}
+
 .pull-right > .dropdown-menu {
   right: 0;
   left: auto;
@@ -3392,7 +3385,7 @@ input[type="button"].btn-block {
 .btn-primary:active,
 .btn-primary.active,
 .btn-primary.disabled,
-.btn-primary[disabled] { 
+.btn-primary[disabled] {
   color: #ffffff;
   background-color: #0044cc;
   *background-color: #003bb3;
