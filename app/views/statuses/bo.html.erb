@@ -6,7 +6,7 @@
 <body>
 		<table>
 		<strong>current users :</strong> <h4  style="font-size: 40px;"><%= @users.count %></h4>
-	<strong>current entrances :</strong> <h4  style="font-size: 40px;"><%= $redis.get "entrances_counter" %></h4>
+	<strong>current entrances :</strong> <h4  style="font-size: 40px;"></h4>
 	<strong>current statuses :</strong></br> <h4  class="visible-phone" style="font-size: 40px;"><%= @statuses.count %></h4>
 	</table> 
 	<div class="visible-phone">
