@@ -5,13 +5,14 @@
 <% @statuses.each do |status| %>
 <div class="span1"><h5><%= status.user_name %></h5><%= image_tag status.user.gravatar_url, :class => 'gravatar' %></div></br></br>
 <div class="span3"></div>
-    <div class="status">
-    <p class=""><%= status.context %></p>
-    <td><%= link_to 'Show ', status %></td> |
-    <td><%= link_to ' Edit', edit_status_path(status) %></td>
+    <div>
+    <p><%= status.context %></p>
    <div class="page-header"> 
       <h5><%= time_ago_in_words(status.created_at) + " ago" %></h5>
   </tr>
+     <td><%= link_to 'Show ', status %></td> |
+    <td><%= link_to ' Edit', edit_status_path(status) %></td>
+
 </div>
 <% end %>
 </table>
