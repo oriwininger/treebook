@@ -10,7 +10,8 @@ gem 'simple_form'
 gem 'binding_of_caller'
 
 group :development, :test do
-	gem 'sqlite3'
+	gem 'pg'
+	# gem 'sqlite3'
 end	
 
 group :production do 
